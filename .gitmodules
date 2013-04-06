@@ -18,4 +18,4 @@
 	url = https://github.com/CakeDC/migrations.git
 [submodule "Plugin/Goodies"]
 	path = Plugin/Goodies
-	url = https://github.com/rlp/goodies.git
+	url = git@github.com/rlp/goodies.git
