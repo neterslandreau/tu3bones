@@ -13,9 +13,9 @@
 [submodule "Plugin/Tags"]
 	path = Plugin/Tags
 	url = https://github.com/CakeDC/tags.git
-[submodule "Plugin/Goodies"]
-	path = Plugin/Goodies
-	url = https://github.com/predominant/goodies.git
 [submodule "Plugin/Migrations"]
 	path = Plugin/Migrations
 	url = https://github.com/CakeDC/migrations.git
+[submodule "Plugin/Goodies"]
+	path = Plugin/Goodies
+	url = https://github.com/rlp/goodies.git
