@@ -1,0 +1,21 @@
+[submodule "Plugin/DebugKit"]
+	path = Plugin/DebugKit
+	url = https://github.com/cakephp/debug_kit.git
+[submodule "Plugin/Utils"]
+	path = Plugin/Utils
+	url = https://github.com/CakeDC/utils.git
+[submodule "Plugin/Search"]
+	path = Plugin/Search
+	url = https://github.com/CakeDC/search.git
+[submodule "Plugin/Users"]
+	path = Plugin/Users
+	url = https://github.com/CakeDC/users.git
+[submodule "Plugin/Tags"]
+	path = Plugin/Tags
+	url = https://github.com/CakeDC/tags.git
+[submodule "Plugin/Goodies"]
+	path = Plugin/Goodies
+	url = https://github.com/predominant/goodies.git
+[submodule "Plugin/Migrations"]
+	path = Plugin/Migrations
+	url = https://github.com/CakeDC/migrations.git

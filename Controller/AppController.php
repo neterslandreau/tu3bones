@@ -32,4 +32,16 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+/**
+ * Constructor
+ *
+ * @param mixed $request
+ * @param mixed $response
+ */
+	public function __construct($request = null, $response = null) {
+		parent::__construct($request, $response);
+		if (Configure::read('debug')) {
+			$this->components[] = 'DebugKit.Toolbar';
+		}
+	}
 }

@@ -88,6 +88,14 @@ Cache::config('default', array('engine' => 'File'));
  *
  * ));
  */
+CakePlugin::load('DebugKit');
+CakePlugin::load('Goodies');
+CakePlugin::load('Migrations');
+CakePlugin::load('Users');
+CakePlugin::load('Utils');
+CakePlugin::load('Tags');
+CakePlugin::load('Search');
+
 Configure::write('Dispatcher.filters', array(
 	'AssetDispatcher',
 	'CacheDispatcher'
