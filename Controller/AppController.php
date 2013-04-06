@@ -33,6 +33,38 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 /**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array(
+		'Auth',
+		'Session',
+		'Cookie',
+		'Paginator',
+		'Security',
+		'Email',
+		'RequestHandler',
+	);
+/**
+ * Helpers
+ *
+ * @var array
+ */
+	public $helpers = array(
+		// 'Goodies.AutoJavascript',
+		// 'Goodies.GoogleAnalytics',
+		// 'Goodies.Gravatar',
+		'Html',
+		'Form',
+		'Session',
+		'Js',
+	);
+/**
+ * publically accessible controllers - all methods are allowed by all
+ */
+	public $publicControllers = array('pages');
+/**
  * Constructor
  *
  * @param mixed $request
@@ -43,5 +75,45 @@ class AppController extends Controller {
 		if (Configure::read('debug')) {
 			$this->components[] = 'DebugKit.Toolbar';
 		}
+	}
+/**
+ * beforeFilter callback
+ */
+	public function beforeFilter() {
+		$this->Auth->authorize = array('Controller');
+		if (in_array(strtolower($this->params['controller']), $this->publicControllers)) {
+			$this->Auth->allow();
+		}
+
+		$this->Cookie->name = 'tu3bonesRememberMe';
+		$this->Cookie->time = '1 Month';
+		$cookie = $this->Cookie->read('User');
+
+		if (!empty($cookie) && !$this->Auth->user()) {
+			$data['User']['username'] = '';
+			$data['User']['password'] = '';
+			if (is_array($cookie)) {
+				$data['User']['username'] = $cookie['username'];
+				$data['User']['password'] = $cookie['password'];
+			}
+			if (!$this->Auth->login($data)) {
+				$this->Cookie->destroy();
+				$this->Auth->logout();
+			}
+		}
+	}
+/**
+ * isAuthorized
+ *
+ * @return boolean
+ */
+	public function isAuthorized() {
+		if ($this->Auth->user() && $this->params['prefix'] != 'admin') {
+			return true;
+		}
+		if ($this->params['prefix'] == 'admin' && $this->Auth->user('is_admin')) {
+			return true;
+		}
+		return false;
 	}
 }
