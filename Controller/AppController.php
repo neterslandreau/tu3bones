@@ -52,9 +52,9 @@ class AppController extends Controller {
  * @var array
  */
 	public $helpers = array(
-		'Goodies.AutoJavascript',
-		'Goodies.GoogleAnalytics',
-		'Goodies.Gravatar',
+		// 'Goodies.AutoJavascript',
+		// 'Goodies.GoogleAnalytics',
+		// 'Goodies.Gravatar',
 		'Html',
 		'Form',
 		'Session',
