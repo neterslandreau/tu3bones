@@ -225,3 +225,7 @@ Create a directory for user views:
 ```
 mkdir View/AppUsers
 ```
+ 
+Next up is to add a user. But first we want to tag the user and that means some more plugin extending. That will come in a future installment of this series.
+ 
+Happy Baking!
