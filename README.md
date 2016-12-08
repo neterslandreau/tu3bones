@@ -3,8 +3,6 @@ tu3bones
 
 CakePHP 2.3 skelton
 
-http://think-knot.com/2013/04/06/baking-tu3bones-laying-the-foundation-of-a-cakephp-2-3-application/
-
 The purpose of this is to record the steps taken create an extendable and maintainable foundation for a CakePHP 2.3+ application that can be deployed in under 10 minutes.
 
 Every application I know of has restricted areas so to be able to identify a user is a requirement. This foundation should also be able to provide a base for SEO work.
